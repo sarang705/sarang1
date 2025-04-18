@@ -1,0 +1,37 @@
+pipeline {
+    agent any
+    stages {
+        stage('Checkout') {
+            steps {
+                git branch: 'main', url: 'pipeline {
+    agent any
+    stages {
+        stage('Checkout') {
+            steps {
+                git branch: 'main', url: 'https://github.com/sarang705/sarang1.git'
+            }
+        }
+        stage('Deploy') {
+            steps {
+                sh '''
+                    sudo rm -rf /var/www/html/*
+                    sudo cp -r * /var/www/html
+                    echo "Website deployed to /var/www/html"
+                '''
+            }
+        }
+    }
+}'
+            }
+        }
+        stage('Deploy') {
+            steps {
+                sh '''
+                    sudo rm -rf /var/www/html/jenkins/*
+                    sudo cp -r * /var/www/html/jenkins/
+                   echo "Website deployed to /var/www/html/jenkins"
+                '''
+            }
+        }
+    }
+}
